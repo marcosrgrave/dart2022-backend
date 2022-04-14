@@ -9,22 +9,34 @@ class MyServerHandler {
 
     // GET basics
     rout.get("/", (Request req) {
-      return Response(200, body: "Main Route");
+      return Response(
+        200,
+        body: "Main Route",
+      );
     });
 
     // Query Parameters
     rout.get("/home", (Request req) {
-      return Response(200, body: "Home Route");
+      return Response(
+        200,
+        body: "Home Route",
+      );
     });
 
     rout.get("/hello.world/<someName>", (Request req, String someName) {
-      return Response(200, body: "Hello World , $someName!");
+      return Response(
+        200,
+        body: "Hello World , $someName!",
+      );
     });
 
     rout.get("/queryInput", (Request req) {
       String? firstQueryInput = req.url.queryParameters["fqi"];
       String? intNumber = req.url.queryParameters["intNumber"];
-      return Response(200, body: "Query input is: $firstQueryInput $intNumber");
+      return Response(
+        200,
+        body: "Query input is: $firstQueryInput $intNumber",
+      );
     });
 
     // POST basics
@@ -45,6 +57,28 @@ class MyServerHandler {
         return Response.forbidden("Invalid Access. Please, try again.");
       }
     });
+
+    // MIME basics (content type)
+    rout.get("/mime", (Request req) {
+      return Response(
+        200,
+        body: "<h1>Testing HTML</h1>",
+        headers: {"content-type": "text/html"},
+        // verify content-type in the 'netwok' inspection on browser
+      );
+    });
+
+    rout.post(
+      "/postJson",
+      (Request req) {
+        Map jsonData = {"someKey": "someValue"};
+        String jsonString = jsonEncode(jsonData);
+        return Response.ok(
+          jsonString,
+          headers: {"content-type": "application/json"},
+        );
+      },
+    );
 
     return rout;
   }
