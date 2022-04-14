@@ -5,20 +5,24 @@ class MyServerHandler {
   Handler get handler {
     final rout = Router();
 
-    rout.get("/", (Request request) {
+    // get basics
+    rout.get("/", (Request req) {
       return Response(200, body: "Main Route");
     });
 
-    rout.get("/home", (Request request) {
+    // Query Parameters
+    rout.get("/home", (Request req) {
       return Response(200, body: "Home Route");
     });
 
-    rout.get("/hello.world", (Request request) {
-      return Response(200, body: "Hello World!");
+    rout.get("/hello.world/<someName>", (Request req, String someName) {
+      return Response(200, body: "Hello World , $someName!");
     });
 
-    rout.get("/amanda", (Request request) {
-      return Response(200, body: "Oi, linda.");
+    rout.get("/queryInput", (Request req) {
+      String? firstQueryInput = req.url.queryParameters["fqi"];
+      String? intNumber = req.url.queryParameters["intNumber"];
+      return Response(200, body: "Query input is: $firstQueryInput $intNumber");
     });
 
     return rout;
