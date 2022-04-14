@@ -10,6 +10,12 @@
 
 ## HTTP
 
+https://developer.mozilla.org/en-US/docs/Web/HTTP
+
+Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmitting hypermedia documents, such as HTML. It was designed for communication between web browsers and web servers, but it can also be used for other purposes.
+
+HTTP follows a classical client-server model, with a client opening a connection to make a request, then waiting until it receives a response. HTTP is a stateless protocol, meaning that the server does not keep any data (state) between two requests.
+
 ### **Query Parameters**
 
 - They are parameters attached to the url, like the name of the home page.
@@ -52,7 +58,7 @@ https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods
 
 #### CONNECT
 
-- O método CONNECT estabelece um túnel para o servidor identificado pelo recurso de destino.
+- The HTTP CONNECT method starts two-way communications with the requested resource. It can be used to open a tunnel.
 
 #### OPTIONS
 
@@ -70,3 +76,14 @@ https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods
 
 - O método HEAD solicita uma resposta de forma idêntica ao método GET, porém sem conter o corpo da resposta.
 
+## MIME types (IANA media types)
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+
+A media type (also known as a Multipurpose Internet Mail Extensions or MIME type) indicates the nature and format of a document, file, or assortment of bytes. MIME types are defined and standardized in IETF's RFC 6838.
+
+The Internet Assigned Numbers Authority (IANA) is responsible for all official MIME types, and you can find the most up-to-date and complete list at their Media Types page.
+
+### **Common MIME types**
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
