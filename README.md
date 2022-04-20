@@ -1,1 +1,1 @@
-Pratical aproach to learn backend principles in dart.
+Practical approach to learn backend principles in dart by applying a basic CRUD API.

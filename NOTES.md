@@ -87,3 +87,13 @@ The Internet Assigned Numbers Authority (IANA) is responsible for all official M
 ### **Common MIME types**
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+
+## CRUD
+
+### **Create**
+
+### **Read**
+
+### **Update**
+
+### **Delete**
