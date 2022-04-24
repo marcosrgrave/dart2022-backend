@@ -3,17 +3,15 @@ import 'package:shelf/shelf.dart';
 import 'api/blog.dart';
 import 'api/login.dart';
 import 'infra/my_server.dart';
+import 'models/article_model.dart';
+import 'services/article_service.dart';
 import 'utils/custom_env.dart';
 
 void main() async {
   // multiple handlers method | design pattern: builder | cascade
   var cascadeHandler = Cascade()
-      .add(
-        LoginAPI().loginHandler,
-      )
-      .add(
-        Blog().blogHandler,
-      )
+      .add(LoginAPI().loginHandler)
+      .add(Blog(ArticleService()).blogHandler)
       .handler;
 
   var cascadeHandlerWithMiddle = Pipeline()

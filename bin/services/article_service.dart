@@ -3,7 +3,7 @@ import 'generic_service.dart';
 
 class ArticleService implements GenericService<ArticleModel> {
   @override
-  bool delete(ArticleModel value) {
+  bool delete(int id) {
     // TODO: implement delete
     throw UnimplementedError();
   }
