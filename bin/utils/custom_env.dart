@@ -1,13 +1,12 @@
 import 'dart:io';
+import 'custom_parser.dart';
 
 class CustomEnv {
   static Map<String, String> _mapData = {};
 
-  static Future get({
-    required String key,
-  }) async {
+  static Future<T> get<T>({required String key}) async {
     if (_mapData.isEmpty) await _load();
-    return _mapData[key];
+    return _mapData[key]!.toType(T);
   }
 
   static Future<String> _readFile() async {

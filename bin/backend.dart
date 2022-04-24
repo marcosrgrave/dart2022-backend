@@ -26,8 +26,8 @@ void main() async {
 
   await MyServer().initialize(
     handler: cascadeHandlerWithMiddle,
-    address: await CustomEnv.get(key: "server_address"),
-    port: 8080, // await CustomEnv.get(key: "server_port"),
-    // must convert get port to int
+    address: await CustomEnv.get<String>(key: "server_address"),
+    port: await CustomEnv.get<int>(key: "server_port"),
+    // had to convert 'get port' to int
   );
 }
